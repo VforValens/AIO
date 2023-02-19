@@ -1,0 +1,21 @@
+{
+    "blacklistedEquipment": ["Scabbard", "SecuredContainer", "Compass", "ArmBand"],
+
+    "prapor":
+    {
+        "minHr": 24,
+        "maxHr": 36,
+        "storageMaxHr": 96,
+        "priceCoef": 0.16,
+        "returnChance": 75
+    },
+
+    "therapist":
+    {
+        "minHr": 10,
+        "maxHr": 20,
+        "storageMaxHr": 144,
+        "priceCoef": 0.25,
+        "returnChance": 85
+    }
+}

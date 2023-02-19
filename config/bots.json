@@ -1,0 +1,84 @@
+{
+    "bossChance": 
+    {
+        "activated": false,
+        "chance": 100
+    },
+    
+    "botGenerationBatchSizePerType": 15,
+    "maxBotCap": {
+        "factory": 10,
+        "customs": 15,
+        "woods": 15,
+        "shoreline": 15,
+        "lighthouse": 15,
+        "reservebase": 15,
+        "interchange": 15,
+        "laboratory": 15,
+        "streets of tarkov": 18,
+        "default": 15
+    },
+
+    "pmc":
+    {
+        "chanceSameSideIsHostilePercent": 80,
+        "containersOnPMCs": true,
+        "isUsec": 50,
+        "lootNValue": 3,
+        "maxBackpackLootTotalRub": 150000,
+        "maxPocketLootTotalRub": 50000,
+        "maxVestLootTotalRub": 50000,
+
+        "convertIntoPmcChance": 
+        {
+            "assault": 
+            {
+                "min": 20,
+                "max": 30
+            },
+            "cursedassault": 
+            {
+                "min": 15,
+                "max": 30
+            },
+            "pmcbot": 
+            {
+                "min": 15,
+                "max": 25
+            },
+            "exusec": 
+            {
+                "min": 5,
+                "max": 5
+            }
+        },
+
+        "useDifficultyOverride": false,
+        "difficulty": "AsOnline",
+        "botRelativeLevelDeltaMax": 10,
+
+        "difficultyWeights":
+        {
+            "useWeights": false,
+            "weights": 
+            {
+                "easy": 0,
+                "normal": 40,
+                "hard": 30,
+                "impossible": 30
+            }
+        },
+
+        "looseWeaponInBackpackChance": 15,
+        "looseWeaponInBackpackLootMinMax": 
+        {
+                "min": 1,
+                "max": 1
+        }
+    },
+
+    "scav":
+    {
+        "lootNValue": 4
+    }		
+}

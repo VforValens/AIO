@@ -1,0 +1,19 @@
+{
+    "carExtractBaseStandingGain": 0.25,
+    "chompiesBossFix": true,
+    "fixOpenZones": true,
+    "scavExtractGain": 0.01,
+
+    "timeLimit":
+        {
+            "enabled": false,
+            "raidTime": 60
+        },
+
+    "aiAmount": "AsOnline",
+    "aiDifficulty": "AsOnline",
+    "bossEnabled": true,
+    "scavWars": false,
+    "taggedAndCursed": false,
+    "enablePve": true
+}

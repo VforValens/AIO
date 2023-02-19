@@ -1,0 +1,209 @@
+{
+    "commonContainers":
+    {
+        "enabled": false,
+        "AMMO_CASE":
+        {
+            "width": 2,
+            "height": 2,
+            "cellsH": 7,
+            "cellsV": 7
+        },
+
+        "DOCUMENTS_CASE":
+        {
+            "width": 1,
+            "height": 2,
+            "cellsH": 4,
+            "cellsV": 4
+        },
+
+        "DOGTAG_CASE":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 10,
+            "cellsV": 10
+        },
+
+        "GRENADE_CASE":
+        {
+            "width": 3,
+            "height": 3,
+            "cellsH": 8,
+            "cellsV": 8
+        },
+
+        "INJECTOR_CASE":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 3,
+            "cellsV": 3
+        },
+
+        "ITEM_CASE":
+        {
+            "width": 4,
+            "height": 4,
+            "cellsH": 8,
+            "cellsV": 8
+        },
+
+        "KEY_TOOL":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 4,
+            "cellsV": 4
+        },
+
+        "KEYCARD_HOLDER":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 3,
+            "cellsV": 3
+        },
+
+        "SCAV_JUNKBOX":
+        {
+            "width": 4,
+            "height": 4,
+            "cellsH": 14,
+            "cellsV": 14
+        },
+
+        "MAGAZINE_CASE":
+        {
+            "width": 3,
+            "height": 2,
+            "cellsH": 7,
+            "cellsV": 7
+        },
+
+        "MEDICINE_CASE":
+        {
+            "width": 3,
+            "height": 3,
+            "cellsH": 7,
+            "cellsV": 7
+        },
+
+        "MONEY_CASE":
+        {
+            "width": 3,
+            "height": 2,
+            "cellsH": 7,
+            "cellsV": 7
+        },
+
+        "HOLODILNICK_THERMAL_BAG":
+        {
+            "width": 3,
+            "height": 3,
+            "cellsH": 8,
+            "cellsV": 8
+        },
+
+        "PISTOL_CASE":
+        {
+            "width": 2,
+            "height": 2,
+            "cellsH": 4,
+            "cellsV": 3
+        },
+
+        "SICC_ORGANIZATIONAL_POUCH":
+        {
+            "width": 2,
+            "height": 1,
+            "cellsH": 5,
+            "cellsV": 5
+        },
+
+        "SIMPLE_WALLET":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 2,
+            "cellsV": 2
+        },
+
+        "THICC_ITEM_CASE":
+        {
+            "width": 5,
+            "height": 3,
+            "cellsH": 14,
+            "cellsV": 14
+        },
+
+        "THICC_WEAPON_CASE":
+        {
+            "width": 5,
+            "height": 2,
+            "cellsH": 6,
+            "cellsV": 15
+        },
+
+        "WEAPON_CASE":
+        {
+            "width": 5,
+            "height": 2,
+            "cellsH": 5,
+            "cellsV": 10
+        },
+
+        "WZ_WALLET":
+        {
+            "width": 1,
+            "height": 1,
+            "cellsH": 2,
+            "cellsV": 2
+        }
+    },
+
+    "securedContainers": 
+    {
+        "enabled": false,
+        "ALPHA":
+        {
+            "width": 2,
+            "height": 2,
+            "cellsH": 2,
+            "cellsV": 2
+        },
+
+        "BETA":
+        {
+            "width": 3,
+            "height": 2,
+            "cellsH": 3,
+            "cellsV": 2
+        },
+
+        "EPSILON":
+        {
+            "width": 4,
+            "height": 2,
+            "cellsH": 4,
+            "cellsV": 2
+        },
+
+        "GAMMA":
+        {
+            "width": 3,
+            "height": 3,
+            "cellsH": 3,
+            "cellsV": 3
+        },
+
+        "KAPPA":
+        {
+            "width": 3,
+            "height": 3,
+            "cellsH": 3,
+            "cellsV": 4
+        }
+    }
+}

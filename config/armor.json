@@ -1,0 +1,86 @@
+{
+    "removeGearRestrictions": false,
+
+    "armorMaterials":
+    {
+        "uhmwpe":
+        {
+            "destructibility": 0.45,
+            "minRepairDegradation": 0.01,
+            "maxRepairDegradation": 0.03,
+            "explosionDestructibility": 0.4,
+            "minRepairKitDegradation": 0.005,
+            "maxRepairKitDegradation": 0.025
+        },
+
+        "aramid":
+        {
+            "destructibility": 0.25,
+            "minRepairDegradation": 0.03,
+            "maxRepairDegradation": 0.07,
+            "explosionDestructibility": 0.2,
+            "minRepairKitDegradation": 0.025,
+            "maxRepairKitDegradation": 0.065
+        },
+
+        "combined":
+        {
+            "destructibility": 0.5,
+            "minRepairDegradation": 0.1,
+            "maxRepairDegradation": 0.15,
+            "explosionDestructibility": 0.4,
+            "minRepairKitDegradation": 0.09,
+            "maxRepairKitDegradation": 0.14
+        },
+
+        "titan":
+        {
+            "destructibility": 0.55,
+            "minRepairDegradation": 0.06,
+            "maxRepairDegradation": 0.1,
+            "explosionDestructibility": 0.5,
+            "minRepairKitDegradation": 0.055,
+            "maxRepairKitDegradation": 0.09
+        },
+
+        "aluminium":
+        {
+            "destructibility": 0.6,
+            "minRepairDegradation": 0.06,
+            "maxRepairDegradation": 0.1,
+            "explosionDestructibility": 0.6,
+            "minRepairKitDegradation": 0.055,
+            "maxRepairKitDegradation": 0.09
+        },
+
+        "armoredSteel":
+        {
+            "destructibility": 0.7,
+            "minRepairDegradation": 0.01,
+            "maxRepairDegradation": 0.03,
+            "explosionDestructibility": 0.6,
+            "minRepairKitDegradation": 0.005,
+            "maxRepairKitDegradation": 0.025
+        },
+
+        "ceramic":
+        {
+            "destructibility": 0.8,
+            "minRepairDegradation": 0.17,
+            "maxRepairDegradation": 0.22,
+            "explosionDestructibility": 0.7,
+            "minRepairKitDegradation": 0.155,
+            "maxRepairKitDegradation": 0.2
+        },
+
+        "glass":
+        {
+            "destructibility": 0.8,
+            "minRepairDegradation": 0.23,
+            "maxRepairDegradation": 0.42,
+            "explosionDestructibility": 0.8,
+            "minRepairKitDegradation": 0.21,
+            "maxRepairKitDegradation": 0.38
+        }
+    }
+}

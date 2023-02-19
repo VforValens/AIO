@@ -1,0 +1,43 @@
+{
+    "standardStash":
+    {
+        "vertical": 28,
+        "horizontal": 10
+    },
+
+    "behindStash":
+    {
+        "vertical": 38,
+        "horizontal": 10
+    },
+
+    "escapeStash":
+    {
+        "vertical": 48,
+        "horizontal": 10
+    },
+
+    "eodStash":
+    {
+        "vertical": 68,
+        "horizontal": 10
+    },
+
+    "examinedByDefault": false,
+    "examineTime":
+    {
+        "enabled": false,
+        "examineTime": 1
+    },
+    
+    "removeBackpacksRestrictions": true,
+    "removeContainersRestrictions": true,
+    "removeDiscardLimit": true,
+    "removeInRaidItemRestrictions": true,
+    "removeKeyUsageMax": true,
+    "removeSecureContainersRestrictions": true,
+    "roublesMaxStack": 500000,
+    "dollarsMaxStack": 50000,
+    "eurosMaxStack": 50000,
+    "weightModifier": 1
+}

@@ -1,0 +1,13 @@
+{
+    "malfunctions":
+    {
+        "jam": false,
+        "misfeed": false,
+        "misfire": false,
+        "overheat": false,
+        "slide": false
+    },
+
+    "recoilTweaks": true,
+    "smgInHolsters": false
+}

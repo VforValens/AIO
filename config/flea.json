@@ -1,0 +1,82 @@
+{
+    "minUserLevel": 15,
+    "runIntervalSeconds": 45,
+
+    "blacklist":
+    {
+        "enableBsgList": true,
+        "enableQuestList": true
+    },
+
+    "condition": 
+    {
+        "5422acb9af1c889c16000029": {
+            "_name": "WEAPON",
+            "conditionChance": 0.2,
+            "min": 0.6,
+            "max": 1
+        },
+        "543be5664bdc2dd4348b4569": {
+            "_name": "MEDS",
+            "conditionChance": 0.2,
+            "min": 0.6,
+            "max": 1
+        },
+        "5447e0e74bdc2d3c308b4567": {
+            "_name": "SPEC_ITEM",
+            "conditionChance": 0.3,
+            "min": 0.02,
+            "max": 1
+        },
+        "543be5e94bdc2df1348b4568": {
+            "_name": "KEY",
+            "conditionChance": 0.02,
+            "min": 0.97,
+            "max": 1
+        },
+        "5448e5284bdc2dcb718b4567": {
+            "_name": "VEST",
+            "conditionChance": 0.2,
+            "min": 0.05,
+            "max": 1
+        },
+        "57bef4c42459772e8d35a53b": {
+            "_name": "ARMORED_EQUIPMENT",
+            "conditionChance": 0.6,
+            "min": 0.05,
+            "max": 1
+        },
+        "543be6674bdc2df1348b4569": {
+            "_name": "FOOD_DRINK",
+            "conditionChance": 0.05,
+            "min": 0.05,
+            "max": 1
+        }
+    },
+
+    "currencies": 
+    {
+        "roubles": 78,
+        "dollars": 20,
+        "euros": 2
+    },
+
+    "offerItemCount":
+    {
+        "min": 8,
+        "max": 15
+    },
+
+    "reputation":
+    {
+        "gain": 0.0000002,
+        "loss": 0.0000002
+    },  
+
+    "time": 
+    {
+        "baseSellTime": 15,
+        "minSellTime": 5,
+        "maxSellTime": 15
+    }
+}
