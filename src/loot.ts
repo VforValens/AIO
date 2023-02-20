@@ -91,18 +91,17 @@ export class Loot
 
         // Streets Marked Room Loot.
         spawnPoints = this.tables.getTables().locations.tarkovstreets.looseLoot.spawnpoints;
-        const streets = spawnPoints.find(x=>x.template.Id==="Loot 135_Leo_Rare5491814");
+        const streets = spawnPoints.find(x=>x.template.Id==="Loot 135_Leo_Rare2741538");
         const streets1 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (1)"));
         const streets2 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (2)"));
         const streets3 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (3)"));
         const streets4 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (4)"));
         const streets5 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (5)"));
-        const streets6 = spawnPoints.find(x=>x.template.Id==="Loot 135_Leo_Rare (6)3814146");
-        const streets6a = spawnPoints.find(x=>x.template.Id==="Loot 135_Leo_Rare (6)3955044");
+        const streets6 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (6)"));
         const streets7 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (7)"));
         const streets8 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (8)"));
         const streets9 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (9)"));
-        const streets10 = spawnPoints.find(x=>x.template.Id==="Loot 135_Leo_Rare (10)5484984");
+        const streets10 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (10)"));
         const streets11 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (11)"));
         const streets12 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (12)"));
         const streets13 = spawnPoints.find(x=>x.template.Id.startsWith("Loot 135_Leo_Rare (13)"));
@@ -117,7 +116,6 @@ export class Loot
         streets4.itemDistribution.push(...this.containers());
         streets5.itemDistribution.push(...this.containers());
         streets6.itemDistribution.push(...this.containers());
-        streets6a.itemDistribution.push(...this.containers());
         streets7.itemDistribution.push(...this.containers());
         streets8.itemDistribution.push(...this.containers());
         streets9.itemDistribution.push(...this.containers());
