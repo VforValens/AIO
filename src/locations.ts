@@ -26,10 +26,10 @@ export class Locations
         }
 
         // Sets exfil/extract timer to config.
-        if (mod.exfilTime != 8)
+        if (mod.ExfiltrationTime != 8)
         {
-            this.exfilTime();
-            this.logger.info(`Exfil Time Set to ${mod.exfilTime}`);
+            this.exfiltrationTime();
+            this.logger.info(`Exfil Time Set to ${mod.ExfiltrationTime}`);
         }
 
         // Remove extracts restrictions
@@ -44,13 +44,6 @@ export class Locations
         {
             this.extractionsExtended();
             this.logger.info("Extractions Are Extended");
-        }
-
-        // Enables co-op extractions (PMC w/ Scav)
-        if (mod.enableCoopExtracts)
-        {
-            this.coopExtractsEnabled();
-            this.logger.info("Coop Extracts Are Enabled");
         }
 
         // Remove the access key "5c94bbff86f7747ee735c08f" (Labs access card) from Labs.
@@ -82,7 +75,7 @@ export class Locations
         }
     }
 
-    private exfilTime(): void
+    private exfiltrationTime(): void
     {
         const maps = this.tables.getTables().locations;
         const mod = this.modConfig;
@@ -101,7 +94,7 @@ export class Locations
 
             for (const exit of mapBase.exits)
             {
-                exit.ExfiltrationTime = mod.exfilTime;
+                exit.ExfiltrationTime = mod.ExfiltrationTime;
             }
         }
     }
@@ -126,53 +119,10 @@ export class Locations
             }
         }
     }
-
-
-    private coopExtractsEnabled(): void
-    {
-        const locations = this.tables.getTables().locations;
-        for (const i in locations)
-        {
-            if (i !== "base")
-                for (const x in locations[i].base.exits)
-                {
-                    if (locations[i].base.exits[x].Name !== "EXFIL_Train" && 
-                        !locations[i].base.exits[x].Name.includes("lab") || 
-                        locations[i].base.exits[x].Name === "lab_Vent")
-                    {
-                        if (locations[i].base.exits[x].PassageRequirement === "ScavCooperation")
-                        {
-                            locations[i].base.exits[x].PassageRequirement = "None";
-                        }
-                        if (locations[i].base.exits[x].ExfiltrationType !== "Individual")
-                        {
-                            locations[i].base.exits[x].ExfiltrationType = "Individual";
-                        }
-                        if (locations[i].base.exits[x].Id !== "")
-                        {
-                            locations[i].base.exits[x].Id = "";
-                        }
-                        if (locations[i].base.exits[x].Count !== 0)
-                        {
-                            locations[i].base.exits[x].Count = 0;
-                        }
-                        if (locations[i].base.exits[x].RequirementTip !== "")
-                        {
-                            locations[i].base.exits[x].RequirementTip = "";
-                        }
-                        if (locations[i].base.exits[x].RequiredSlot)
-                        {
-                            delete locations[i].base.exits[x].RequiredSlot;
-                        }
-                    }
-                }
-        }
-        
-    }
+     
 
     private extractionsExtended(): void
     {
-        
         const locations = this.tables.getTables().locations;
         for (const map in locations)
         {
@@ -207,7 +157,13 @@ export class Locations
                 case "lighthouse":
                     for (const extract in locations[map].base.exits)
                     {
-                        locations[map].base.exits[extract].EntryPoints = "Tunnel, North"
+                        locations[map].base.exits[extract].EntryPoints = "Tunnel,North";
+                    }
+                    break;
+                case "tarkovstreets":
+                    for (const extract in locations[map].base.exits)
+                    {
+                        locations[map].base.exits[extract].EntryPoints = "E1_2,E6_1,E2_3,E3_4,E4_5,E5_6,E6_1";
                     }
                     break;
                 default:

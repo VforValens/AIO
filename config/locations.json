@@ -1,8 +1,7 @@
 {
     "allExtractsAvailable": false,
     "freeLabsEntry": false,
-    "exfilTime": 8,
+    "ExfiltrationTime": 8,
     "extractionsExtended": false,
-    "enableCoopExtracts": false,
     "noExtractRestrictions": false
 }
