@@ -39,10 +39,10 @@ export class Loot
             this.logger.info(`Static Loot Multiplier: ${mod.staticLootMultiplier}`);
         }
         
-        if (mod.containersInMarkedRoom)
+        //if (mod.containersInMarkedRoom)
         {
-            this.containersInMarkedRoom();
-            this.logger.info(`Containers In Marked Room: ${mod.containersInMarkedRoom}`);
+            //this.containersInMarkedRoom();
+            //this.logger.info(`Containers In Marked Room: ${mod.containersInMarkedRoom}`);
         }
     }
 
