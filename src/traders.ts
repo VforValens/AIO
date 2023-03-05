@@ -37,10 +37,6 @@ export class Traders
             this.traderPriceMultiplier();
         }
 
-        if (trader.durabilityPurchaseThreshhold != mod.durabilityPurchaseThreshhold)
-        {
-            this.minDurabilityForSale();
-        }
 
         if (trader.persistPurchaseDataInProfile != mod.persistPurchaseDataInProfile)
         {
@@ -69,13 +65,6 @@ export class Traders
         this.logger.info(`Trader Price Multiplier Set to ${mod.traderPriceMultipler}`);
     }
 
-    private minDurabilityForSale(): void
-    {
-        const mod = this.modConfig;
-        const trader = this.traderConfig;
-        trader.durabilityPurchaseThreshhold = mod.durabilityPurchaseThreshhold;
-        this.logger.info(`Min Durability For Sale Set to ${mod.durabilityPurchaseThreshhold}`);
-    }
 
     private updateFence(): void
     {
