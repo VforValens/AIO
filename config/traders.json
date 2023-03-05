@@ -42,17 +42,6 @@
     },
     
     "updateTimeDefault": 3600,
-	"durabilityPurchaseThreshhold": {
-		"54cb50c76803fa8b248b4571": 60,
-		"54cb57776803fa99248b456e": 60,
-		"579dc571d53a0658a154fbec": 0,
-		"58330581ace78e27b8b10cee": 60,
-		"5935c25fb3acc3127c3d8cd9": 60,
-		"5a7c2eca46aef81a7ca2145d": 60,
-		"5ac3b934156ae10c4430e83c": 60,
-		"5c0647fdd443bc2504c2d371": 60,
-		"default": 60
-	},
 	"traderPriceMultipler": 1,
 	"persistPurchaseDataInProfile": true,
 	"fence": {
