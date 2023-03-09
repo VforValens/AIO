@@ -1,8 +1,8 @@
 import { ITemplateItem } from "@spt-aki/models/eft/common/tables/ITemplateItem";
+import { BaseClasses } from "@spt-aki/models/enums/BaseClasses";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { ItemsConfig } from "../config/ts/items";
 import { Logger } from "./logger";
-import { BaseClasses } from "@spt-aki/models/enums/BaseClasses";
 
 export class Items
 {
@@ -161,7 +161,8 @@ export class Items
     
             if (mod.removeBackpacksRestrictions &&  base._parent === BaseClasses.BACKPACK && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters = [];
+                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
+                base._props.Grids[0]._props.filters[0].Filter = [];
             }
         }
     }
@@ -174,7 +175,8 @@ export class Items
             const mod = this.modConfig;
             if (mod.removeContainersRestrictions && base._parent === BaseClasses.SIMPLE_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters = [];
+                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
+                base._props.Grids[0]._props.filters[0].Filter = [];
             }
         }
     }
@@ -188,7 +190,8 @@ export class Items
             const mod = this.modConfig;
             if (mod.removeSecureContainersRestrictions && base._parent === BaseClasses.MOD_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters = [];
+                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
+                base._props.Grids[0]._props.filters[0].Filter = [];
             }
         }
     }
