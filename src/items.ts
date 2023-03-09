@@ -167,6 +167,7 @@ export class Items
         }
     }
 
+    // Removes container item restrictions.
     private removeContainersRestrictions():void
     {
         for (const id in this.items)
@@ -181,7 +182,7 @@ export class Items
         }
     }
 
-
+    // Removes secured container item restrictions.
     private removeSecureContainersRestrictions(): void
     {
         for (const id in this.items)
@@ -196,25 +197,28 @@ export class Items
         }
     }
 
-
+    // Updates the specified stash type to be the specified configured value in vertical and horizontal cells by the user.
     private updateStandardStash(): void
     {
         this.items["566abbc34bdc2d92178b4576"]._props.Grids[0]._props.cellsV = this.modConfig.standardStash.vertical;
         this.items["566abbc34bdc2d92178b4576"]._props.Grids[0]._props.cellsH = this.modConfig.standardStash.horizontal;
     }
 
+    // Updates the specified stash type to be the specified configured value in vertical and horizontal cells by the user.
     private updateLeftBehindStash(): void
     {
         this.items["5811ce572459770cba1a34ea"]._props.Grids[0]._props.cellsV = this.modConfig.behindStash.vertical;
         this.items["5811ce572459770cba1a34ea"]._props.Grids[0]._props.cellsH = this.modConfig.behindStash.horizontal;
     }
 
+    // Updates the specified stash type to be the specified configured value in vertical and horizontal cells by the user.
     private updateEscapeStash(): void
     {
         this.items["5811ce662459770f6f490f32"]._props.Grids[0]._props.cellsV = this.modConfig.escapeStash.vertical;
         this.items["5811ce662459770f6f490f32"]._props.Grids[0]._props.cellsH = this.modConfig.escapeStash.horizontal;
     }
 
+    // Updates the specified stash type to be the specified configured value in vertical and horizontal cells by the user.
     private updateEodStash(): void
     {
         this.items["5811ce772459770e9e5f9532"]._props.Grids[0]._props.cellsV = this.modConfig.eodStash.vertical;
@@ -230,6 +234,7 @@ export class Items
         }
     }
 
+    // Removes the maximum usage on keys so they can be used infinitely.
     private removeKeyUsageMax(): void
     {
         for (const item in this.items)
@@ -241,6 +246,7 @@ export class Items
         }
     }
 
+    // Removes the item discard limit so that you can discard items freely.
     private removeDiscardLimit(): void
     {
         for (const itemId in this.items)
@@ -254,6 +260,7 @@ export class Items
         }
     }
 
+    // Changes the time it takes to examine items. 0 is instant. In seconds.
     private changeExamineTime(): void
     {
         const mod = this.modConfig;
@@ -263,6 +270,7 @@ export class Items
         }
     }
 
+    // Removes in raid item restrictions.
     private removeInRaidItemRestrictions(): void
     {
         this.tables.getTables().globals.config.RestrictionsInRaid = [];
