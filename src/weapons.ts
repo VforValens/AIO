@@ -1,4 +1,4 @@
-import { Config, IGlobals } from "@spt-aki/models/eft/common/IGlobals";
+import { IGlobals } from "@spt-aki/models/eft/common/IGlobals";
 import { ITemplateItem } from "@spt-aki/models/eft/common/tables/ITemplateItem";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
@@ -31,9 +31,9 @@ export class Weapons
             this.logger.info("Weapon Malfunctions Patched");
         }
 
-        if (mod.recoilTweaks)
+        if (mod.recoilReduction)
         {
-            this.recoilTweaks();
+            this.recoilReduction();
             this.logger.info("Weapon Recoil has been tweaked");
         }
 
@@ -83,35 +83,39 @@ export class Weapons
         }
     }
 
-    private recoilTweaks(): void
+    private recoilReduction(): void
     {
         const weapons: IDatabaseTables = this.weapons;
-        const globals: Config = this.globals.config;
+        const globals = this.globals.config.Aiming;
 
         for (const weapon in weapons) 
         {
             const weaponData: ITemplateItem = weapons[weapon];
-            if (weaponData._props.weapClass != null && weaponData._props.weapClass !== undefined)
+            if (weaponData?._props?.weapClass !== undefined)
             {
                 if (weaponData._props.weapClass !== "pistol") 
                 {
-                    weaponData._props.CameraRecoil *= 0.25;
+                    weaponData._props.CameraRecoil *= 0.20;
                     weaponData._props.CameraSnap = 3.5;
+                    weaponData._props.RecoilForceUp *= 0.95;
+                    weaponData._props.RecoilForceBack *= 0.95;
                 }
                 else 
                 {
-                    weaponData._props.CameraRecoil *= 0.45;
+                    weaponData._props.CameraRecoil *= 0.40;
                     weaponData._props.CameraSnap = 3.5;
+                    weaponData._props.RecoilForceUp *= 0.95;
+                    weaponData._props.RecoilForceBack *= 0.95;
                 }
             }
         }
-        globals.Aiming.RecoilCrank = true;
-        globals.Aiming.AimProceduralIntensity = 0.7;
-        globals.Aiming.RecoilHandDamping = 0.6;
-        globals.Aiming.RecoilDamping = 0.5;
-        globals.Aiming.RecoilConvergenceMult *= 5;
-        globals.Aiming.RecoilVertBonus = 30;
-        globals.Aiming.RecoilBackBonus = 80;
+        globals.RecoilCrank = true;
+        globals.AimProceduralIntensity = 0.63;
+        globals.RecoilHandDamping = 0.40;
+        globals.RecoilDamping = 0.45;
+        globals.RecoilConvergenceMult *= 5.5;
+        globals.RecoilVertBonus = 30;
+        globals.RecoilBackBonus = 80;
     }
 
     private smgInHolsters(): void

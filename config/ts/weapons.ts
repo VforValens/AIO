@@ -1,7 +1,7 @@
 export interface WeaponsConfig
 {
     malfunctions: Malfunctions
-    recoilTweaks: boolean
+    recoilReduction: boolean
     smgInHolsters: boolean
 }
 

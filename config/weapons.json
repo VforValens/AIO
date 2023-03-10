@@ -8,6 +8,6 @@
         "slide": false
     },
 
-    "recoilTweaks": true,
+    "recoilReduction": true,
     "smgInHolsters": false
 }
