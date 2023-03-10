@@ -18,6 +18,7 @@ export class Weapons
         this.logger = logger;
         this.tables = databaseServer;
     }
+    
 
     public updateWeapons(): void
     {
@@ -29,12 +30,6 @@ export class Weapons
         {
             this.weaponMalfunctions();
             this.logger.info("Weapon Malfunctions Patched");
-        }
-
-        if (mod.recoilReduction)
-        {
-            this.recoilReduction();
-            this.logger.info("Weapon Recoil has been tweaked");
         }
 
         if (mod.smgInHolsters)
@@ -83,40 +78,6 @@ export class Weapons
         }
     }
 
-    private recoilReduction(): void
-    {
-        const weapons: IDatabaseTables = this.weapons;
-        const globals = this.globals.config.Aiming;
-
-        for (const weapon in weapons) 
-        {
-            const weaponData: ITemplateItem = weapons[weapon];
-            if (weaponData?._props?.weapClass !== undefined)
-            {
-                if (weaponData._props.weapClass !== "pistol") 
-                {
-                    weaponData._props.CameraRecoil *= 0.20;
-                    weaponData._props.CameraSnap = 3.5;
-                    weaponData._props.RecoilForceUp *= 0.95;
-                    weaponData._props.RecoilForceBack *= 0.95;
-                }
-                else 
-                {
-                    weaponData._props.CameraRecoil *= 0.40;
-                    weaponData._props.CameraSnap = 3.5;
-                    weaponData._props.RecoilForceUp *= 0.95;
-                    weaponData._props.RecoilForceBack *= 0.95;
-                }
-            }
-        }
-        globals.RecoilCrank = true;
-        globals.AimProceduralIntensity = 0.63;
-        globals.RecoilHandDamping = 0.40;
-        globals.RecoilDamping = 0.45;
-        globals.RecoilConvergenceMult *= 5.5;
-        globals.RecoilVertBonus = 30;
-        globals.RecoilBackBonus = 80;
-    }
 
     private smgInHolsters(): void
     {
