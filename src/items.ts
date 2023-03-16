@@ -161,8 +161,7 @@ export class Items
     
             if (mod.removeBackpacksRestrictions &&  base._parent === BaseClasses.BACKPACK && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
-                base._props.Grids[0]._props.filters[0].Filter = [];
+                base._props.Grids[0]._props.filters = [];
             }
         }
     }
@@ -176,8 +175,7 @@ export class Items
             const mod = this.modConfig;
             if (mod.removeContainersRestrictions && base._parent === BaseClasses.SIMPLE_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
-                base._props.Grids[0]._props.filters[0].Filter = [];
+                base._props.Grids[0]._props.filters = [];
             }
         }
     }
@@ -191,8 +189,7 @@ export class Items
             const mod = this.modConfig;
             if (mod.removeSecureContainersRestrictions && base._parent === BaseClasses.MOD_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
             {
-                base._props.Grids[0]._props.filters[0].ExcludedFilter = [];
-                base._props.Grids[0]._props.filters[0].Filter = [];
+                base._props.Grids[0]._props.filters = [];
             }
         }
     }
