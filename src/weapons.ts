@@ -1,5 +1,4 @@
 import { IGlobals } from "@spt-aki/models/eft/common/IGlobals";
-import { ITemplateItem } from "@spt-aki/models/eft/common/tables/ITemplateItem";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { WeaponsConfig } from "../config/ts/weapons";
@@ -42,7 +41,7 @@ export class Weapons
     
     private weaponMalfunctions(): void
     {
-        const items = this.tables.getTables().templates.items;
+        const items = this.tables.getTables().templates.items._parent;
 
         for (const id in items)
         {
@@ -50,7 +49,6 @@ export class Weapons
             const malfunctions = this.modConfig.malfunctions;        
 
             //Weapons malfunctions
-
             if (malfunctions.jam && base._props.AllowJam)
             {
                 base._props.AllowJam = false;
