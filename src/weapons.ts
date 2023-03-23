@@ -41,7 +41,7 @@ export class Weapons
     
     private weaponMalfunctions(): void
     {
-        const items = this.tables.getTables().templates.items
+        const items = this.tables.getTables().templates.items;
 
         for (const id in items)
         {
