@@ -1,4 +1,5 @@
-import { Spawnpoint } from "@spt-aki/models/eft/common/ILooseLoot";
+import { ItemDistribution, Spawnpoint } from "@spt-aki/models/eft/common/ILooseLoot";
+import { Item } from "@spt-aki/models/eft/common/tables/IItem";
 import { ILocationConfig } from "@spt-aki/models/spt/config/ILocationConfig";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { LootConfig } from "../config/ts/loot";
@@ -399,9 +400,9 @@ export class Loot
         streets15.itemDistribution.push(...this.itemDistribution());
     }
 
-    private itemId(): any[]
+    private itemId(): Item[]
     {
-        const itemId: any = [];
+        const itemId: Item[] = [];
         itemId.push({ "_id": "1337774434331278", "_tpl": "5d235bb686f77443f4331278" });
         itemId.push({ "_id": "1337774562535613", "_tpl": "5c127c4486f7745625356c13" });
         itemId.push({ "_id": "1337774604423522", "_tpl": "59fb023c86f7746d0d4b423c" });
@@ -422,7 +423,7 @@ export class Loot
         return itemId;
     }
 
-    private itemDistribution(): any[]
+    private itemDistribution(): ItemDistribution[]
     {
         /* Container  "id"s
         * S I C C pouch: 5d235bb686f77443f4331278
@@ -443,7 +444,7 @@ export class Loot
         * Secure container Kappa: 5c093ca986f7740a1867ab12
         */
        
-        const itemDistribution: any = [];
+        const itemDistribution: ItemDistribution[] = [];
         itemDistribution.push({ "composedKey": { "key": "1337774434331278" }, "relativeProbability": 12 });
         itemDistribution.push({ "composedKey": { "key": "1337774562535613" }, "relativeProbability": 25 });
         itemDistribution.push({ "composedKey": { "key": "1337774604423522" }, "relativeProbability": 13 });
