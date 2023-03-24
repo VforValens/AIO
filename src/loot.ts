@@ -365,6 +365,25 @@ export class Loot
     
     private itemId(): Item[]
     {
+        /* Container  "id"s
+        * S I C C pouch: 5d235bb686f77443f4331278
+        * Magazine Case: 5c127c4486f7745625356c13
+        * Weapon Case: 59fb023c86f7746d0d4b423c
+        * T H I C C Weapon Case: 5b6d9ce188a4501afc1b2b25
+        * Item Case: 59fb042886f7746c5005a7b2
+        * T H I C C Item Case: 5c0a840b86f7742ffa4f2482
+        * Money case: 59fb016586f7746d0d4b423a
+        * Mr Holodilnick Thermal Bag: 5c093db286f7740a1b2617e3
+        * Medicine case: 5aafbcd986f7745e590fff23
+        * Lucky scav junkbox: 5b7c710788a4506dec015957
+        * Grenade case: 5e2af55f86f7746d4159f07c
+        * Secure container Gamma: 5857a8bc2459772bad15db29
+        * Secure container Beta: 5857a8b324597729ab0a0e7d
+        * Secure container Alpha: 544a11ac4bdc2d470e8b456a
+        * Secure container Epsilon: 59db794186f77448bc595262
+        * Secure container Kappa: 5c093ca986f7740a1867ab12
+        */
+
         const itemId: Item[] = [];
         itemId.push({ "_id": "1337774434331278", "_tpl": "5d235bb686f77443f4331278" });
         itemId.push({ "_id": "1337774562535613", "_tpl": "5c127c4486f7745625356c13" });
@@ -388,43 +407,25 @@ export class Loot
 
     
     private itemDistribution(): ItemDistribution[]
-    {
-        /* Container  "id"s
-        * S I C C pouch: 5d235bb686f77443f4331278
-        * Magazine Case: 5c127c4486f7745625356c13
-        * Weapon Case: 59fb023c86f7746d0d4b423c
-        * T H I C C Weapon Case: 5b6d9ce188a4501afc1b2b25
-        * Item Case: 59fb042886f7746c5005a7b2
-        * T H I C C Item Case: 5c0a840b86f7742ffa4f2482
-        * Money case: 59fb016586f7746d0d4b423a
-        * Mr Holodilnick Thermal Bag: 5c093db286f7740a1b2617e3
-        * Medicine case: 5aafbcd986f7745e590fff23
-        * Lucky scav junkbox: 5b7c710788a4506dec015957
-        * Grenade case: 5e2af55f86f7746d4159f07c
-        * Secure container Gamma: 5857a8bc2459772bad15db29
-        * Secure container Beta: 5857a8b324597729ab0a0e7d
-        * Secure container Alpha: 544a11ac4bdc2d470e8b456a
-        * Secure container Epsilon: 59db794186f77448bc595262
-        * Secure container Kappa: 5c093ca986f7740a1867ab12
-        */
-       
+    {       
+        const relativeProbability = this.modConfig.containersInMarkedRoom.RelativeProbability;
         const itemDistribution: ItemDistribution[] = [];
-        itemDistribution.push({ "composedKey": { "key": "1337774434331278" }, "relativeProbability": 12 });
-        itemDistribution.push({ "composedKey": { "key": "1337774562535613" }, "relativeProbability": 25 });
-        itemDistribution.push({ "composedKey": { "key": "1337774604423522" }, "relativeProbability": 13 });
-        itemDistribution.push({ "composedKey": { "key": "1337450112255242" }, "relativeProbability": 10 });
-        itemDistribution.push({ "composedKey": { "key": "1337774650057273" }, "relativeProbability": 13 });
-        itemDistribution.push({ "composedKey": { "key": "1337774242482726" }, "relativeProbability": 10 });
-        itemDistribution.push({ "composedKey": { "key": "1337774604423825" }, "relativeProbability": 25 });
-        itemDistribution.push({ "composedKey": { "key": "1337774012617384" }, "relativeProbability": 30 });
-        itemDistribution.push({ "composedKey": { "key": "1337774559023584" }, "relativeProbability": 30 });
-        itemDistribution.push({ "composedKey": { "key": "1337450601595759" }, "relativeProbability": 15 });
-        itemDistribution.push({ "composedKey": { "key": "1337774641590776" }, "relativeProbability": 23 });
-        itemDistribution.push({ "composedKey": { "key": "1337977215293479" }, "relativeProbability": 3 });
-        itemDistribution.push({ "composedKey": { "key": "1337977290079844" }, "relativeProbability": 3 });
-        itemDistribution.push({ "composedKey": { "key": "1337247084564564" }, "relativeProbability": 3 });
-        itemDistribution.push({ "composedKey": { "key": "1337774485952621" }, "relativeProbability": 3 });
-        itemDistribution.push({ "composedKey": { "key": "1337774018671223" }, "relativeProbability": 1 });
+        itemDistribution.push({ "composedKey": { "key": "1337774434331278" }, "relativeProbability": relativeProbability.SICCpouch });
+        itemDistribution.push({ "composedKey": { "key": "1337774562535613" }, "relativeProbability": relativeProbability.MagazineCase });
+        itemDistribution.push({ "composedKey": { "key": "1337774604423522" }, "relativeProbability": relativeProbability.WeaponCase });
+        itemDistribution.push({ "composedKey": { "key": "1337450112255242" }, "relativeProbability": relativeProbability.THICCWeaponCase });
+        itemDistribution.push({ "composedKey": { "key": "1337774650057273" }, "relativeProbability": relativeProbability.ItemCase });
+        itemDistribution.push({ "composedKey": { "key": "1337774242482726" }, "relativeProbability": relativeProbability.THICCItemCase });
+        itemDistribution.push({ "composedKey": { "key": "1337774604423825" }, "relativeProbability": relativeProbability.MoneyCase });
+        itemDistribution.push({ "composedKey": { "key": "1337774012617384" }, "relativeProbability": relativeProbability.MrHolodilnick });
+        itemDistribution.push({ "composedKey": { "key": "1337774559023584" }, "relativeProbability": relativeProbability.MedicineCase });
+        itemDistribution.push({ "composedKey": { "key": "1337450601595759" }, "relativeProbability": relativeProbability.Junkbox });
+        itemDistribution.push({ "composedKey": { "key": "1337774641590776" }, "relativeProbability": relativeProbability.GrenadeCase });
+        itemDistribution.push({ "composedKey": { "key": "1337977215293479" }, "relativeProbability": relativeProbability.SecureGamma });
+        itemDistribution.push({ "composedKey": { "key": "1337977290079844" }, "relativeProbability": relativeProbability.SecureBeta });
+        itemDistribution.push({ "composedKey": { "key": "1337247084564564" }, "relativeProbability": relativeProbability.SecureAlpha });
+        itemDistribution.push({ "composedKey": { "key": "1337774485952621" }, "relativeProbability": relativeProbability.SecureEpsilon });
+        itemDistribution.push({ "composedKey": { "key": "1337774018671223" }, "relativeProbability": relativeProbability.SecureKappa });
 
         return itemDistribution;
     }

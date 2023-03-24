@@ -1,5 +1,27 @@
 {
-    "containersInMarkedRoom": true,
+    "containersInMarkedRoom":
+    { 
+        "RelativeProbability":
+        {
+            "SICCpouch": 12,
+            "MagazineCase": 25,
+            "WeaponCase": 13,
+            "THICCWeaponCase": 10,
+            "ItemCase": 13,
+            "THICCItemCase": 10,
+            "MoneyCase": 25,
+            "MrHolodilnick": 30,
+            "MedicineCase": 30,
+            "Junkbox": 15,
+            "GrenadeCase": 23,
+            "SecureGamma": 3,
+            "SecureBeta": 3,
+            "SecureAlpha": 3,
+            "SecureEpsilon": 3,
+            "SecureKappa": 1
+        }
+    },
+
     "looseLootMultiplier": 1,
     "staticLootMultiplier": 1
 }
