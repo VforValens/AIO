@@ -187,7 +187,7 @@ export class Items
         {
             const base = this.items[id];
             const mod = this.modConfig;
-            if (mod.removeSecureContainersRestrictions && base._parent === BaseClasses.MOD_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
+            if (mod.removeSecureContainersRestrictions && base._parent === BaseClasses.MOB_CONTAINER && base._props.Grids[0]._props.filters.length > 0)
             {
                 base._props.Grids[0]._props.filters = [];
             }

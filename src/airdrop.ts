@@ -71,51 +71,51 @@ export class Airdrop
         // Airdrop Loot Settings configuration begin.
 
         // Sets the Preset Count to what is configured.
-        if (mod.loot.presetCount != airdrop.loot.presetCount)
+        if (mod.loot.presetCount != airdrop.loot.mixed.presetCount)
         {
-            airdrop.loot.presetCount = mod.loot.presetCount;
+            airdrop.loot.mixed.presetCount = mod.loot.presetCount;
             this.logger.info(`Preset Count is ${mod.loot.presetCount}`);
         }
 
         // Sets the Item Count to what is configured.
-        if (mod.loot.itemCount != airdrop.loot.itemCount)
+        if (mod.loot.itemCount != airdrop.loot.mixed.itemCount)
         {
-            airdrop.loot.itemCount = mod.loot.itemCount;
+            airdrop.loot.mixed.itemCount = mod.loot.itemCount;
             this.logger.info(`Item Count is ${mod.loot.itemCount}`);
         }
 
         // Sets the Item Blacklist to what is configured.
-        if (mod.loot.itemBlacklist != airdrop.loot.itemBlacklist)
+        if (mod.loot.itemBlacklist != airdrop.loot.mixed.itemBlacklist)
         {
-            airdrop.loot.itemBlacklist = mod.loot.itemBlacklist;
+            airdrop.loot.mixed.itemBlacklist = mod.loot.itemBlacklist;
             this.logger.info(`Item Blacklist is ${mod.loot.itemBlacklist}`);
         }
 
         // Sets the itemTypeWhitelist to what is configured.
-        if (mod.loot.itemTypeWhitelist != airdrop.loot.itemTypeWhitelist)
+        if (mod.loot.itemTypeWhitelist != airdrop.loot.mixed.itemTypeWhitelist)
         {
-            airdrop.loot.itemTypeWhitelist = mod.loot.itemTypeWhitelist;
+            airdrop.loot.mixed.itemTypeWhitelist = mod.loot.itemTypeWhitelist;
             this.logger.info(`Item Type Whitelist is ${mod.loot.itemTypeWhitelist}`);
         }
 
         // Sets the itemLimits to what is configured.
-        if (mod.loot.itemLimits != airdrop.loot.itemLimits)
+        if (mod.loot.itemLimits != airdrop.loot.mixed.itemLimits)
         {
-            airdrop.loot.itemLimits = mod.loot.itemLimits;
+            airdrop.loot.mixed.itemLimits = mod.loot.itemLimits;
             this.logger.info(`Item Limits is ${mod.loot.itemLimits}`);
         }
 
         // Sets the itemStackLimits to what is configured.
-        if (mod.loot.itemStackLimits != airdrop.loot.itemStackLimits)
+        if (mod.loot.itemStackLimits != airdrop.loot.mixed.itemStackLimits)
         {
-            airdrop.loot.itemStackLimits = mod.loot.itemStackLimits;
+            airdrop.loot.mixed.itemStackLimits = mod.loot.itemStackLimits;
             this.logger.info(`Item Stack Limits is ${mod.loot.itemStackLimits}`);
         }
 
         // Sets the Armor Level Whitelist to what is configured.
-        if (mod.loot.armorLevelWhitelist != airdrop.loot.armorLevelWhitelist)
+        if (mod.loot.armorLevelWhitelist != airdrop.loot.mixed.armorLevelWhitelist)
         {
-            airdrop.loot.armorLevelWhitelist = mod.loot.armorLevelWhitelist;
+            airdrop.loot.mixed.armorLevelWhitelist = mod.loot.armorLevelWhitelist;
             this.logger.info(`Armor Level Whitelist is ${mod.loot.armorLevelWhitelist}`);
         }
     }
