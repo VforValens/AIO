@@ -12,6 +12,7 @@ import { ITraderConfig } from "@spt-aki/models/spt/config/ITraderConfig";
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import { IPmcConfig } from "config/ts/bots";
 import { DependencyContainer } from "tsyringe";
 import { Config } from "../config/ts/config";
 import { Airdrop } from "./airdrop";
@@ -41,6 +42,7 @@ class ValensAIO implements IPostDBLoadMod
     private databaseServer: DatabaseServer;
     private configServer: ConfigServer;
     private botConfig: IBotConfig;
+    private pmcConfig: IPmcConfig;
     private insuranceConfig: IInsuranceConfig;
     private locationConfig: ILocationConfig;
     private ragfairConfig: IRagfairConfig;
@@ -61,6 +63,7 @@ class ValensAIO implements IPostDBLoadMod
         this.locationConfig = this.configServer.getConfig<ILocationConfig>(ConfigTypes.LOCATION);
         this.ragfairConfig = this.configServer.getConfig<IRagfairConfig>(ConfigTypes.RAGFAIR);
         this.botConfig = this.configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
+        this.pmcConfig = this.configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
         this.inRaidConfig = this.configServer.getConfig<IInRaidConfig>(ConfigTypes.IN_RAID);
         this.insuranceConfig = this.configServer.getConfig<IInsuranceConfig>(ConfigTypes.INSURANCE);
         this.hideoutConfig = this.configServer.getConfig<IHideoutConfig>(ConfigTypes.HIDEOUT);
@@ -77,7 +80,7 @@ class ValensAIO implements IPostDBLoadMod
         const armor = new Armor(vLogger, this.databaseServer);
         armor.updateArmor();
 
-        const bots = new Bots(vLogger, this.databaseServer, this.botConfig, this.weightedRandomHelper);
+        const bots = new Bots(vLogger, this.databaseServer, this.botConfig, this.pmcConfig, this.weightedRandomHelper);
         bots.updateBots();
 
         const containers = new Containers(vLogger, this.databaseServer);

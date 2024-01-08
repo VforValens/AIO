@@ -144,7 +144,7 @@ export class Items
     {
         for (const item in this.items)
         {
-            if (this.items[item]._props?.Weight)
+            if (this.items[item]._props?.Weight && this.items[item]._parent !== "5485a8684bdc2da71d8b4567")
             {
                 this.items[item]._props.Weight *= this.modConfig.weightModifier;
             }

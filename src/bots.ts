@@ -1,5 +1,6 @@
 import { WeightedRandomHelper } from "@spt-aki/helpers/WeightedRandomHelper";
 import { IBotConfig } from "@spt-aki/models/spt/config/IBotConfig";
+import { IPmcConfig } from "@spt-aki/models/spt/config/IPmcConfig";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { BotsConfig } from "../config/ts/bots";
 import { Logger } from "./logger";
@@ -9,13 +10,15 @@ export class Bots
     private modConfig: BotsConfig = require("../config/bots.json");
     private logger: Logger;
     private botConfig: IBotConfig;
+    private pmcConfig: IPmcConfig;
     private tables: DatabaseServer;
     private weightedRandomHelper: WeightedRandomHelper;
 
-    constructor(logger: Logger, databaseServer: DatabaseServer, botConfig: IBotConfig, weightedRandomHelper: WeightedRandomHelper)
+    constructor(logger: Logger, databaseServer: DatabaseServer, botConfig: IBotConfig, pmcConfig: IPmcConfig, weightedRandomHelper: WeightedRandomHelper)
     {
         this.logger = logger;
         this.botConfig = botConfig;
+        this.pmcConfig = pmcConfig;
         this.tables = databaseServer;
         this.weightedRandomHelper = weightedRandomHelper;
     }
@@ -28,7 +31,7 @@ export class Bots
         const modScav = this.modConfig.scav;
 
         // Server side variables
-        const pmc = this.botConfig.pmc;
+        const pmc = this.pmcConfig;
         const bot = this.botConfig;
         const lootNValue = this.botConfig.lootNValue;
 
@@ -108,10 +111,10 @@ export class Bots
 
 
         // Adjusts the chance for PMC to spawn instead of the default bot type if configured outside of the default values.
-        if (this.modConfig.pmc.convertIntoPmcChance.assault.min != this.botConfig.pmc.convertIntoPmcChance.assault.min || this.modConfig.pmc.convertIntoPmcChance.assault.max != this.botConfig.pmc.convertIntoPmcChance.assault.max
-            || this.modConfig.pmc.convertIntoPmcChance.cursedassault.min != this.botConfig.pmc.convertIntoPmcChance.cursedassault.min || this.modConfig.pmc.convertIntoPmcChance.cursedassault.max != this.botConfig.pmc.convertIntoPmcChance.cursedassault.max
-            || this.modConfig.pmc.convertIntoPmcChance.pmcbot.min != this.botConfig.pmc.convertIntoPmcChance.pmcbot.min || this.modConfig.pmc.convertIntoPmcChance.pmcbot.max != this.botConfig.pmc.convertIntoPmcChance.pmcbot.max
-            || this.modConfig.pmc.convertIntoPmcChance.exusec.min != this.botConfig.pmc.convertIntoPmcChance.exusec.min || this.modConfig.pmc.convertIntoPmcChance.exusec.max != this.botConfig.pmc.convertIntoPmcChance.exusec.max)
+        if (this.modConfig.pmc.convertIntoPmcChance.assault.min != this.pmcConfig.convertIntoPmcChance.assault.min || this.modConfig.pmc.convertIntoPmcChance.assault.max != this.pmcConfig.convertIntoPmcChance.assault.max
+            || this.modConfig.pmc.convertIntoPmcChance.cursedassault.min != this.pmcConfig.convertIntoPmcChance.cursedassault.min || this.modConfig.pmc.convertIntoPmcChance.cursedassault.max != this.pmcConfig.convertIntoPmcChance.cursedassault.max
+            || this.modConfig.pmc.convertIntoPmcChance.pmcbot.min != this.pmcConfig.convertIntoPmcChance.pmcbot.min || this.modConfig.pmc.convertIntoPmcChance.pmcbot.max != this.pmcConfig.convertIntoPmcChance.pmcbot.max
+            || this.modConfig.pmc.convertIntoPmcChance.exusec.min != this.pmcConfig.convertIntoPmcChance.exusec.min || this.modConfig.pmc.convertIntoPmcChance.exusec.max != this.pmcConfig.convertIntoPmcChance.exusec.max)
         {
             this.adjustPmcChance();
             this.logger.info("Chance to Convert Bots into PMC Patched");
@@ -119,9 +122,9 @@ export class Bots
 
 
         // Modfiies the botRelativeLevelDeltaMax which alters the relative level delta maximum of PMC bots.
-        if (mod.pmc.botRelativeLevelDeltaMax != this.botConfig.pmc.botRelativeLevelDeltaMax)
+        if (mod.pmc.botRelativeLevelDeltaMax != this.pmcConfig.botRelativeLevelDeltaMax)
         {
-            this.botConfig.pmc.botRelativeLevelDeltaMax = mod.pmc.botRelativeLevelDeltaMax;
+            this.pmcConfig.botRelativeLevelDeltaMax = mod.pmc.botRelativeLevelDeltaMax;
             this.logger.info(`Bot Relative Delta Max Level set to ${mod.pmc.botRelativeLevelDeltaMax}`);
         }
 
@@ -146,7 +149,7 @@ export class Bots
     // Function to enable secured and common containers on PMCs.
     private containersOnPMCs(): void
     {
-        const backpackLoot = this.botConfig.pmc.backpackLoot.whitelist;
+        const backpackLoot = this.pmcConfig.backpackLoot.whitelist;
 
         backpackLoot.push("5448bf274bdc2dfc2f8b456a");
         backpackLoot.push("5795f317245977243854e041");
@@ -155,14 +158,14 @@ export class Bots
     private chooseRandomWeightedDifficulty(): string
     {
         const chosenDifficulty = this.weightedRandomHelper.getWeightedInventoryItem(this.modConfig.pmc.difficultyWeights.weights);
-        this.botConfig.pmc.difficulty = chosenDifficulty;
+        this.pmcConfig.difficulty = chosenDifficulty;
 
         return chosenDifficulty;
     }
 
     private adjustPmcChance(): void
     {
-        const pmcConfig = this.botConfig.pmc.convertIntoPmcChance;
+        const pmcConfig = this.pmcConfig.convertIntoPmcChance;
         const modConfig = this.modConfig.pmc.convertIntoPmcChance;
 
         pmcConfig.assault.min = modConfig.assault.min;
@@ -178,7 +181,7 @@ export class Bots
 
     private changeMaxLootvalue(): void
     {
-        const lootConfig = this.botConfig.pmc;
+        const lootConfig = this.pmcConfig;
         const modConfig = this.modConfig.pmc;
 
         lootConfig.maxBackpackLootTotalRub = modConfig.maxBackpackLootTotalRub;
@@ -205,7 +208,7 @@ export class Bots
 
     private changeLooseWeapon():void
     {
-        const pmcConfig = this.botConfig.pmc;
+        const pmcConfig = this.pmcConfig;
         const modConfig = this.modConfig.pmc;
 
         pmcConfig.looseWeaponInBackpackChancePercent = modConfig.looseWeaponInBackpackChancePercent;

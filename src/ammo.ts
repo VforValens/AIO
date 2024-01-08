@@ -1,9 +1,9 @@
-import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
-import { Logger } from "./logger";
-import { Grenade, Ammo762x51, Ammo762x54, Ammo86x70, Ammo46x30, Ammo57x28, Ammo762x25, Ammo9x18, Ammo9x19, Ammo9x21, Ammo9x33R, Ammo1143x23ACP, Ammo545x39, Ammo556x45, Ammo762x35, Ammo762x39, Ammo9x39, Ammo366TKM, Ammo127x55, Ammo12Gauge, Ammo20Gauge, Ammo23x75, Ammo30x29, Ammo26x75 } from "@spt-aki/models/enums/AmmoTypes";
-import { Weapons127x55, Weapons86x70, Weapons9x39, Weapons762x54R, Weapons762x51, Weapons366TKM, Weapons762x39, Weapons762x35, Weapons556x45, Weapons545x39, Weapons57x28FN, Weapons46x30HK, Weapons1143x23, Weapons9x33R, Weapons9x21, Weapons9x19, Weapons9x18, Weapons762x25, Weapons12Gauge, Weapons20Gauge, Weapons23x75 } from "@spt-aki/models/enums/WeaponTypes";
-import { AmmoConfig } from "../config/ts/ammo";
+import { Ammo1143x23ACP, Ammo127x55, Ammo12Gauge, Ammo20Gauge, Ammo23x75, Ammo26x75, Ammo30x29, Ammo366TKM, Ammo46x30, Ammo545x39, Ammo556x45, Ammo57x28, Ammo762x25, Ammo762x35, Ammo762x39, Ammo762x51, Ammo762x54, Ammo86x70, Ammo9x18, Ammo9x19, Ammo9x21, Ammo9x33R, Ammo9x39, Grenade } from "@spt-aki/models/enums/AmmoTypes";
+import { Weapons1143x23, Weapons127x55, Weapons12Gauge, Weapons20Gauge, Weapons23x75, Weapons366TKM, Weapons46x30HK, Weapons545x39, Weapons556x45, Weapons57x28FN, Weapons762x25, Weapons762x35, Weapons762x39, Weapons762x51, Weapons762x54R, Weapons86x70, Weapons9x18, Weapons9x19, Weapons9x21, Weapons9x33R, Weapons9x39 } from "@spt-aki/models/enums/WeaponTypes";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
+import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import { AmmoConfig } from "../config/ts/ammo";
+import { Logger } from "./logger";
 
 export class Ammo
 {
@@ -23,6 +23,14 @@ export class Ammo
         const items = this.tables;
         const stacks = this.modConfig.stacks;
         
+        // Sets ammo weight to be the specific configured value as a multiplier, by default 1x or 100%.
+        for (const item in this.tables)
+        {
+            if (this.tables[item]._props?.Weight && this.tables[item]._parent == "5485a8684bdc2da71d8b4567")
+            {
+                this.tables[item]._props.Weight *= this.modConfig.weightModifier;
+            }
+        }
 
         // Sets HE grenades from GLaunchers max stacks.
         if (stacks.grenades != 1)

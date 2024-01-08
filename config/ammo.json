@@ -1,4 +1,6 @@
 {
+    "weightModifier": 1,
+    
     "stacks":
         {
             "grenades": 1,

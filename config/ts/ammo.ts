@@ -1,5 +1,6 @@
 export interface AmmoConfig
 {
+    weightModifier: number
     stacks: Ammo
     zero: Zero
 }
