@@ -73,18 +73,29 @@ export class Traders
     private disableMaxPurchaseLimits(): void
     {
         const mod = this.modConfig;
-        const trader = this.databaseServer.getTables().traders;
-        if (mod.disableMaxPurchaseLimits)
-            for (const t in trader)
+
+        if (!mod.disableMaxPurchaseLimits)
+        {
+            return;
+        }
+
+        const traders = this.databaseServer.getTables().traders;
+
+        for (const trader in traders)
+        {
+            const traderItems = traders[trader]?.assort?.items
+            if (!traderItems)
             {
-                for (const x in trader[t].assort.items)
+                continue;
+            }
+            for (const item of traderItems)
+            {
+                if (item.upd?.BuyRestrictionMax >= 1)
                 {
-                    if (trader[t].assort.items[x].upd.BuyRestrictionMax >= 1)
-                    {
-                        trader[t].assort.items[x].upd.BuyRestrictionMax = 0;
-                    }
+                    item.upd.BuyRestrictionMax = 0;
                 }
             }
+        }
     }
 
     private updateFence(): void
