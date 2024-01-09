@@ -92,7 +92,8 @@ export class Traders
             {
                 if (item.upd?.BuyRestrictionMax >= 1)
                 {
-                    item.upd.BuyRestrictionMax = 0;
+                    delete item.upd.BuyRestrictionMax;
+                    delete item.upd.BuyRestrictionCurrent;
                 }
             }
         }
