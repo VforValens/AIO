@@ -37,6 +37,11 @@ export class Traders
             this.traderPriceMultiplier();
         }
 
+        if (mod.disableMaxPurchaseLimits)
+        {
+            this.disableMaxPurchaseLimits();
+        }
+
 
         if (trader.persistPurchaseDataInProfile != mod.persistPurchaseDataInProfile)
         {
@@ -65,6 +70,22 @@ export class Traders
         this.logger.info(`Trader Price Multiplier Set to ${mod.traderPriceMultipler}`);
     }
 
+    private disableMaxPurchaseLimits(): void
+    {
+        const mod = this.modConfig;
+        const trader = this.databaseServer.getTables().traders;
+        if (mod.disableMaxPurchaseLimits)
+            for (const t in trader)
+            {
+                for (const x in trader[t].assort.items)
+                {
+                    if (trader[t].assort.items[x].upd.BuyRestrictionMax >= 1)
+                    {
+                        trader[t].assort.items[x].upd.BuyRestrictionMax = 0;
+                    }
+                }
+            }
+    }
 
     private updateFence(): void
     {

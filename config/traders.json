@@ -43,6 +43,7 @@
     
     "updateTimeDefault": 3600,
 	"traderPriceMultipler": 1,
+	"disableMaxPurchaseLimits": false,
 	"persistPurchaseDataInProfile": true,
 	"fence": {
 		"partialRefreshTimeSeconds": 240,

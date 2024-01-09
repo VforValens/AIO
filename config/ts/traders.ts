@@ -7,6 +7,7 @@ export interface TradersConfig
     /** What % of max durability an item needs to sell to a trader*/
     durabilityPurchaseThreshhold: Record<string, number>;
     traderPriceMultipler: number;
+    disableMaxPurchaseLimits: boolean;
     persistPurchaseDataInProfile: boolean;
     fence: FenceConfig;
 }

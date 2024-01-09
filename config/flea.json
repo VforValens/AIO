@@ -57,14 +57,14 @@
     "currencies": 
     {
         "roubles": 78,
-        "dollars": 20,
-        "euros": 2
+        "dollars": 14,
+        "euros": 8
     },
 
     "offerItemCount":
     {
-        "min": 8,
-        "max": 15
+        "min": 7,
+        "max": 30
     },
 
     "reputation":
@@ -75,8 +75,8 @@
 
     "time": 
     {
-        "baseSellTime": 15,
-        "minSellTime": 5,
-        "maxSellTime": 15
+        "baseSellTime": 1.5,
+        "minSellTime": 0,
+        "maxSellTime": 1.0
     }
 }

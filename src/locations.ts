@@ -25,6 +25,13 @@ export class Locations
             this.logger.info("All Extracts @ 100% Chance to Spawn");
         }
 
+        // Sets coop extracts to be paid extracts instead.
+        if (mod.coopExtractsArePaidExtracts)
+        {
+            this.coopExtractsArePaidExtracts();
+            this.logger.info("All Coop Extracts are now Paid Extracts.");
+        }
+
         // Sets exfil/extract timer to config.
         if (mod.ExfiltrationTime != 8)
         {
@@ -55,6 +62,26 @@ export class Locations
     }
 
     private allExtractsAvailable(): void
+    {
+        const locations = this.tables.getTables().locations;
+        for (const i in locations)
+        {
+            if (i !== "base")
+            {
+                for (const x in locations[i].base.exits)
+                {
+                    if (locations[i].base.exits[x].PassageRequirement == "ScavCooperation")
+                    {
+                        locations[i].base.exits[x].PassageRequirement = "TransferItem";
+                        locations[i].base.exits[x].RequirementTip = "EXFIL_Item";
+                        locations[i].base.exits[x].Count = 5000;
+                    }
+                }
+            }
+        }
+    }
+
+    private coopExtractsArePaidExtracts(): void
     {
         const locations = this.tables.getTables().locations;
         for (const i in locations)

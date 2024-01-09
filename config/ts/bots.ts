@@ -4,7 +4,6 @@ import { DynamicLoot } from "@spt-aki/models/spt/config/IPmcConfig";
 export interface BotsConfig
 {
     bossChance: BossChance;
-    botGenerationBatchSizePerType: number;
     maxBotCap: MaxBotCap;
     pmc: IPmcConfig;
     scav: Scav;

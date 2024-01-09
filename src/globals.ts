@@ -63,8 +63,10 @@ export class Globals
         global1.survivedMult = mod.survivedMult;
         global1.runnerMult = mod.runnerMult;
         global1.killedMult = mod.killedMult;
-        this.tables.getTables().globals.config.exp.kill.headShotMult = mod.headShotMult;
-        this.tables.getTables().globals.config.exp.kill.expOnDamageAllHealth = mod.expOnDamageAllHealth;
+        this.tables.getTables().globals.config.exp.kill.botHeadShotMult = mod.headShotMult;
+        this.tables.getTables().globals.config.exp.kill.pmcHeadShotMult = mod.headShotMult;
+        this.tables.getTables().globals.config.exp.kill.botExpOnDamageAllHealth = mod.expOnDamageAllHealth;
+        this.tables.getTables().globals.config.exp.kill.pmcExpOnDamageAllHealth = mod.expOnDamageAllHealth;
         this.logger.info("Match End Settings Patched");
     }
 }

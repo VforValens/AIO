@@ -4,26 +4,26 @@
         "activated": false,
         "chance": 100
     },
-    
-    "botGenerationBatchSizePerType": 15,
+
     "maxBotCap": {
-        "factory": 10,
-        "customs": 15,
-        "woods": 15,
-        "shoreline": 15,
-        "lighthouse": 15,
-        "reservebase": 15,
-        "interchange": 15,
-        "laboratory": 15,
-        "streets of tarkov": 18,
-        "default": 15
+        "factory4_day": 13,
+        "factory4_night": 13,
+        "bigmap": 20,
+        "woods": 20,
+        "shoreline": 22,
+        "lighthouse": 22,
+        "rezervbase": 20,
+        "interchange": 20,
+        "laboratory": 18,
+        "tarkovstreets": 26,
+        "default": 16
     },
 
     "pmc":
     {
         "chanceSameSideIsHostilePercent": 80,
         "containersOnPMCs": true,
-        "isUsec": 50,
+        "isUsec": 60,
         "lootNValue": 3,
         "maxBackpackLootTotalRub": 150000,
         "maxPocketLootTotalRub": 50000,
@@ -31,23 +31,19 @@
 
         "convertIntoPmcChance": 
         {
-            "assault": 
-            {
+            "assault": {
                 "min": 20,
                 "max": 30
             },
-            "cursedassault": 
-            {
+            "cursedassault": {
                 "min": 15,
                 "max": 30
             },
-            "pmcbot": 
-            {
-                "min": 15,
-                "max": 25
+            "pmcbot": {
+                "min": 5,
+                "max": 10
             },
-            "exusec": 
-            {
+            "exusec": {
                 "min": 5,
                 "max": 5
             }

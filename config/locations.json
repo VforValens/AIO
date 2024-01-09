@@ -1,5 +1,6 @@
 {
     "allExtractsAvailable": false,
+    "coopExtractsArePaidExtracts": false,
     "freeLabsEntry": false,
     "ExfiltrationTime": 8,
     "extractionsExtended": false,
