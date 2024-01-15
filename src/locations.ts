@@ -137,9 +137,41 @@ export class Locations
                 {
                     if (locations[i].base.exits[x].Name !== "EXFIL_Train")
                     {
-                        if (locations[i].base.exits[x].Chance !== 100)
+                        // Remove requirements for empty slots.
+                        if (locations[i].base.exits[x].PassageRequirement === "Empty")
                         {
-                            locations[i].base.exits[x].Chance = 100;
+                            locations[i].base.exits[x].PassageRequirement = "None";
+                            locations[i].base.exits[x].RequiredSlot = "FirstPrimaryWeapon";
+                            locations[i].base.exits[x].RequirementTip = "";
+                        }
+                        // Remove transfer item requirements (v-extracts).
+                        if (locations[i].base.exits[x].PassageRequirement === "TransferItem")
+                        {
+                            locations[i].base.exits[x].PassageRequirement = "None";
+                            locations[i].base.exits[x].ExfiltrationType = "Individual";
+                            locations[i].base.exits[x].Id = "";
+                            locations[i].base.exits[x].PlayersCount = "0";
+                            locations[i].base.exits[x].RequirementTip = "";
+                            locations[i].base.exits[x].Count = 0;
+                        }
+                        // Remove Scav Coop requirements
+                        if (locations[i].base.exits[x].PassageRequirement === "ScavCooperation")
+                        {
+                            locations[i].base.exits[x].PassageRequirement = "None";
+                            locations[i].base.exits[x].ExfiltrationType = "Individual";
+                            locations[i].base.exits[x].RequirementTip = "";
+                        }
+                        // Specifically item requirements like descent
+                        if (locations[i].base.exits[x].PassageRequirement === "Reference")
+                        {
+                            locations[i].base.exits[x].PassageRequirement = "None";
+                            locations[i].base.exits[x].Id = "";
+                        }
+                        // Bunker Hermetic Door and ZB-013. D2 and labs beyond my capability - need to be able to open door.
+                        if (locations[i].base.exits[x].Name === "EXFIL_Bunker" || locations[i].base.exits[x].Name === "EXFIL_ZB013")
+                        {
+                            locations[i].base.exits[x].PassageRequirement = "None";
+                            locations[i].base.exits[x].RequirementTip = "";
                         }
                     }
                 }
